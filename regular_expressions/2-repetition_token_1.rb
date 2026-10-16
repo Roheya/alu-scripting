@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/hb?tn/).join
+# A Ruby script that accepts one argument and passes it to a regular expression matching method
+
+puts ARGV[0].match?(/hb?t/)
