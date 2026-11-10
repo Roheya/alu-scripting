@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Query the Reddit API."""
 
@@ -6,13 +5,12 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Return the total number of subscribers for a subreddit."""
-
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-
+    """Return the number of subscribers for a subreddit."""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-    "User-Agent": "linux:alu.reddit.api.project:v1.0 (by /u/your_reddit_username)"
-}
+        "User-Agent": "ALUStudent:reddit_api:v1.0"
+    }
+
     response = requests.get(
         url,
         headers=headers,
@@ -24,4 +22,3 @@ def number_of_subscribers(subreddit):
 
     data = response.json().get("data", {})
     return data.get("subscribers", 0)
-
